@@ -1,0 +1,102 @@
+/*
+Mini Pascal
+
+Especificacion de gramatica independiente del contexto en BNF
+
+	Ana Lucia Correa Arias			1088290129
+	Edwin Fernando Mesa Salazar - 	1088273519
+
+*/
+
+program: function
+	| program function
+	;
+
+function: FUN ID '(' arguments ')' locals BEGIN statements END
+	;
+
+arguments: empty
+	| arglist
+	;
+
+arglist: defvar
+	| arglist ',' defvar
+	;
+
+defvar: ID ':' type
+	;
+
+type: INT
+	|  FLOAT
+	| INT '[' num ']'
+	| FLOAT '[' num ']'
+	;
+
+locals: locals 
+	| locals  local
+	;
+
+local: defvar ';'
+	| function ';'
+	;
+
+statements: statement
+	| statements ';' statement
+	;
+	
+statement:  WHILE relation DO statement
+	| IF relation THEN statement
+	| IF relation THEN statement ELSE statement
+	| ID ':' '=' expression
+	| PRINT '(' literal ')'
+	| WRITE '(' expression ')'
+	| READ '(' ID ')'
+	| RETURN expresion
+	| ID (exprlist)
+	| SKIP
+	| BREAK
+	| BEGIN statements END
+	;
+
+exprlist: empty
+	| arglist
+	;
+
+arglist : ID
+	| arglist ',' ID
+	| arglist ',' expresion
+	| expression
+	;
+
+expression:  expression '+' expression
+	| expression '-' expression
+	| expression '*' expression
+	| expression ''/' expression
+	| '-' expression
+	| '+' expression
+	| '(' expression ')'
+	| NAME '(' exprlist ')'
+	| NAME
+	| NAME '[' expression ']'
+	| NUMBER
+	| INT '(' expression ')'
+	| INT '(' expression ')'
+	;
+
+relation: expression '<' expression
+	| expression <= expression
+	| expression > expression
+	| expression >= expression
+	| expression == expression
+	| expression != expression
+	| relation and relation
+	| relation or relation 
+	| not relation
+	| (relation)
+	;
+	
+empty: /* empty */
+	;
+
+literal: '"' STRING '"'
+	;
