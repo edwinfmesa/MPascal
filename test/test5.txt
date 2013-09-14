@@ -1,0 +1,1 @@
+fun foo(n:int, f:float, d:int[32])

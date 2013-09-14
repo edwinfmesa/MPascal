@@ -1,0 +1,12 @@
+fun foo(n:int)
+i:int;
+j:int;
+/* Una función anidada */
+fun bar(x:int, y:int)
+a:int;
+begin
+end;
+/* Inicio de la función foo */
+begin
+j := bar(n,i)
+end

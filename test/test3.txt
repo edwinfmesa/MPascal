@@ -1,0 +1,8 @@
+if i <= j then
+begin
+tmp := a[i];
+a[i] := a[j];
+a[j] := tmp;
+i:=i+1;
+j:=j-1
+end;

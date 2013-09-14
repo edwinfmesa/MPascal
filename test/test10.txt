@@ -1,0 +1,12 @@
+/*  comentario de una sola linea */
+
+/*
+comentario con saltos de linea
+*/
+
+/*
+No debe importar lo que haya escrito en este lugar:
+l;aksjf sd  /.,/.,sf009as698207we)*&%$#^#@#^*())32o9;lsds .
+*/
+
+/* comentario sin cerrar

@@ -1,0 +1,9 @@
+"holamundo"
+"hola mundo"
+"hello " world"
+"hello "" world"
+"\n"
+"hola \n"
+"\n mundo"
+"hola \n \" \\ "
+" comentario que da error

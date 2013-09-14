@@ -1,0 +1,6 @@
+FLOAT
+Float
+float
+fLOAT
+FlOaT
+FL0oat
